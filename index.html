@@ -1,0 +1,16 @@
+<head>
+</head>
+<body>
+  <div ng-controller="mainCtrl as vm">
+    <div style="margin-bottom:20px;">
+      <div>Showing in angular part of mainCtrl</div>
+      <button ng-click="vm.changeName()" ng-disabled="vm.person.fname === 'amrudesh'">Change first name</button>
+      <div> Hello {{vm.person.fname}} {{vm.person.lname}} </div>
+    </div>
+    <hello-component person="vm.person" ctrlname="vm.ctrlname" watch-depth="reference"></hello-component>
+  </div>
+  <div ng-controller="dupCtrl as vm" style="margin-top:20px;">
+    <hello-component person="vm.person" ctrlname="vm.ctrlname" watch-depth="reference"></hello-component>
+  </div>
+  <script src="dist/bundle.js"></script>
+</body>
